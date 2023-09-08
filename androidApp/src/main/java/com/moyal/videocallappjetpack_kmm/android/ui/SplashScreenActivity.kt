@@ -1,6 +1,9 @@
 package com.moyal.videocallappjetpack_kmm.android.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -12,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat.startActivity
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
@@ -45,16 +49,18 @@ fun ComposeLottieScreen() {
 fun ComposeLottieAnimation(modifier: Modifier) {
 
     val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.splash_animation))
-
     LottieAnimation(
         modifier = modifier,
         composition = composition,
         iterations = LottieConstants.IterateForever,
     )
+
+
 }
 
 @Preview
 @Composable
 fun MainScreenPreview() {
     ComposeLottieScreen()
+
 }
